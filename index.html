@@ -1,0 +1,31 @@
+<head>
+    <title>Random Backing Track</title>
+    <link rel="icon" href="icon.png" />
+</head>
+<body style="text-align: center;background-color: rgb(51,51,51);">
+    <button id="btn" onclick="play();" style="display;width: 200px;height:50px;">Lancer</button>
+    <div id='div' style="display: none;border: solid;width:600;margin: 0 auto;">
+    </div><br>
+    <button id="btn3" onclick="reveal();" style="display: none;width: 200px;height:50px;margin: 0 auto;">Reveler</button>
+    <button id="btn2" onclick="replay();" style="display: none;width: 200px;height:50px;margin: 0 auto;">Une autre !</button>
+</body>
+
+<script>
+    function play(){
+        document.getElementById('btn').style.display = "none";
+        document.getElementById('btn2').style.display = "block";
+        document.getElementById('btn3').style.display = "block";
+        document.getElementById('div').style.display = "block"
+        document.getElementById('div').innerHTML = `<iframe id='frame' style="opacity:0.005;" width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL_E6zdt-7efrBkXTp3Pkhl_4RSh3_JG3b&index=`+Math.floor(Math.random() * 200)+`&rel=0&controls=0&autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+    };
+    function replay(){
+        document.getElementById('btn').style.display = "none";
+        document.getElementById('btn2').style.display = "block";
+        document.getElementById('btn3').style.display = "block";
+        document.getElementById('div').innerHTML = `<iframe id='frame' style="opacity:0.005;" width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PL_E6zdt-7efrBkXTp3Pkhl_4RSh3_JG3b&index=`+Math.floor(Math.random() * 200)+`&rel=0&controls=0&autoplay=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+    };
+    function reveal(){
+        document.getElementById('btn3').style.display = "none";
+        document.getElementById('frame').style.opacity = "1";
+    }
+</script>
